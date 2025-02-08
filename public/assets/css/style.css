@@ -1,0 +1,583 @@
+html, body {
+    overflow-x: hidden; /* Mencegah scroll ke kanan/kiri */
+    width: 100vw; /* Pastikan lebar sesuai layar */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 100%; /* Pastikan tidak melebihi layar */
+}
+
+/* Navbar */
+.navbar {
+    position: fixed; /* Navbar tetap di atas */
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0); /* Transparan awal */
+    transition: background 0.3s ease-in-out;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan hitam */
+}
+
+/* Container navbar agar sejajar */
+.navbar .container {
+    display: flex;
+    align-items: center; /* Pusatkan elemen secara vertikal */
+    justify-content: space-between; /* Logo di kiri, menu di tengah, register di kanan */
+    width: 100%;
+    margin: 0;
+    padding: 0 100px;
+}
+
+/* Logo */
+.logo-container {
+    flex-shrink: 0; /* Logo tidak menyusut */
+    margin-left: 0; /* Hilangkan margin kiri */
+    padding-left: 0; /* Hilangkan padding kiri */
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px; /* Atur ukuran logo */
+    display: block;
+}
+
+/* Menu Navigasi */
+.nav-container {
+    flex-grow: 1; /* Supaya menu memenuhi ruang di tengah */
+    display: flex;
+    justify-content: center; /* Pusatkan menu */
+}
+
+.nav-menu {
+    display: flex;
+    gap: 75px; /* Jarak antar menu */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0); /* Warna teks awal putih */
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #4CAF50;
+}
+
+/* Saat navbar berubah menjadi putih */
+.navbar.scrolled {
+    background: white; /* Warna putih saat scroll */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+}
+
+.navbar.scrolled .nav-links a {
+    color: black; /* Ubah warna teks menjadi hitam */
+}
+
+/* Tombol Register */
+.register {
+    flex-shrink: 0;
+}
+
+.register-btn {
+    background-color: #e3342f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 20px; /* Beri jarak dari menu */
+}
+
+.register-btn:hover {
+    background-color: #c92a26;
+}
+
+/* Tambahkan padding agar konten tidak tertutup navbar */
+body {
+    padding-top: 70px; /* Sesuaikan dengan tinggi navbar */
+}
+
+.full-bg {
+    background-image: url('../../assets/images/Background.png'); /* Sesuaikan lokasi gambar */
+    background-size: cover;
+    background-position: center 10px;
+    background-repeat: no-repeat;
+    width: 100vw;  /* Lebar penuh */
+    height: 100vh; /* Tinggi penuh sesuai layar */
+    
+    display: flex; /* Aktifkan flexbox */
+    justify-content: center; /* Pusatkan secara horizontal */
+    align-items: center; /* Pusatkan secara vertikal */
+    text-align: center; /* Pastikan teks sejajar di tengah */
+    color: white; /* Warna teks agar terlihat */
+    font-size: 36px; /* Ukuran teks */
+    font-weight: bold; /* Tebalkan teks */
+}
+
+/* Styling Section */
+.join-section {
+    padding: 150px 10%;
+}
+
+/* Flexbox untuk tata letak teks & gambar */
+.join-content {
+    display: flex;
+    align-items: center; /* Pusatkan secara vertikal */
+    justify-content: space-between; /* Jarak antara teks & gambar */
+    flex-wrap: wrap; /* Supaya responsif di layar kecil */
+}
+
+/* Container untuk teks */
+.join-text-container {
+    width: 35%; /* Batasi lebar teks */
+}
+
+/* Strip Dekoratif */
+.strip {
+    width: 20%;
+    height: 5px;
+    background-color: #4CAF50;
+    margin-bottom: -20px;
+}
+
+/* Teks */
+.join-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.5;
+}
+
+.join-description {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Gambar */
+.join-image {
+    width: 40%; /* Sesuaikan lebar gambar */
+    max-width: 400px; /* Maksimal lebar */
+    border-radius: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333; /* Warna latar belakang */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px; /* Beri jarak dari konten utama */
+}
+
+/* Konten Footer */
+.footer-content {
+    max-width: 80%;
+    margin: auto;
+}
+
+/* Teks Hak Cipta */
+.footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Link Navigasi Footer */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Efek Masuk dari Kanan */
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Efek Masuk dari Kiri */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Efek Fade-in */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.register-container button {
+    width: 100%;
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-container button:hover {
+    background: #45a049;
+}
+
+/* Background Gambar untuk Halaman Pilihan Login */
+.login-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full tinggi layar */
+    background-image: url('../images/login-bg.jpg'); /* Ganti dengan gambar background */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Overlay untuk efek gelap agar teks lebih terlihat */
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Efek transparan hitam */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container untuk Teks dan Tombol */
+.login-container {
+    background: rgba(255, 255, 255, 0.2); /* Transparansi putih agar tidak terlalu tebal */
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    backdrop-filter: blur(5px); /* Efek blur di belakang container */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Judul */
+.login-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Styling Tombol Pilihan Login */
+.choice-buttons {
+    margin-top: 20px;
+}
+
+.choice-button {
+    display: block;
+    width: 250px;
+    padding: 12px;
+    margin: 10px auto;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Warna Berbeda untuk Admin dan Siswa */
+.choice-button.admin {
+    background: #e74c3c; /* Merah */
+}
+
+.choice-button.admin:hover {
+    background: #c0392b;
+    transform: scale(1.05); /* Animasi membesar saat hover */
+}
+
+.choice-button.user {
+    background: #3498db; /* Biru */
+}
+
+.choice-button.user:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Container untuk Form Login Admin */
+.admin-login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Judul Login */
+.admin-login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Tombol Login */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    background: #45a049;
+}
+
+/* Pesan Error */
+.error-message {
+    background: #ffdddd;
+    color: #d32f2f;
+    padding: 10px;
+    border: 1px solid #d32f2f;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Wrapper untuk Login Admin */
+.admin-login-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Pastikan tinggi minimum halaman mencakup seluruh layar */
+    justify-content: center; /* Pusatkan konten login */
+    align-items: center;
+}
+
+/* Container Login */
+.admin-login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Footer tetap di bawah */
+footer {
+    margin-top: auto; /* Memastikan footer tetap di bagian bawah */
+}
+
+/* Wrapper untuk Login Siswa */
+.user-login-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Pastikan halaman memiliki tinggi minimal satu layar penuh */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Login */
+.user-login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Judul Login */
+.user-login-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Tombol Login */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    background: #2980b9;
+}
+
+/* Pesan Error */
+.error-message {
+    background: #ffdddd;
+    color: #d32f2f;
+    padding: 10px;
+    border: 1px solid #d32f2f;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Footer tetap di bawah */
+footer {
+    margin-top: auto;
+}
+
+/* Teks "Jika belum punya akun" */
+.register-text {
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+}
+
+/* Tombol Register */
+.register-button {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 10px;
+    background: #2ecc71; /* Hijau */
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.register-button:hover {
+    background: #27ae60;
+    transform: scale(1.05);
+}
+
+/* Pesan sukses setelah registrasi */
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
